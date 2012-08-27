@@ -1,2 +1,6 @@
-%h1
-  <%= @lists %>
+%h1 TODO List
+%form#new_list
+  %input#new_list_name{:name => "name", :type => "text"}
+  %input#new_list_description{:name => "description", :type => "text"}
+    %input{:type => "submit", :value => "add"}
+%ul#lists
