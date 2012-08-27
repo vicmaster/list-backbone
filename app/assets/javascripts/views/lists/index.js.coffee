@@ -8,6 +8,7 @@ class ListBackbone.Views.ListsIndex extends Backbone.View
   initialize: ->
     @collection.on('reset',@render, this)
     @collection.on('add',@appendList, this)
+    @collection.on('remove',@removeOneList, this)
 
   render: ->
     $(@el).html(@template())
@@ -15,10 +16,26 @@ class ListBackbone.Views.ListsIndex extends Backbone.View
     this
 
   appendList: (list) ->
-    view = new ListBackbone.Views.List(model: list)
+
+    listId = if list.id? list.id else list.cid
+    elementId = 'list-' + listId
+    view = new ListBackbone.Views.List(model: list, id: elementId)
     $('#lists').append(view.render().el)
 
   createList: (e)->
     e.preventDefault()
-    @collection.create name: $('#new_list_name').val(), description:  $('#new_list_description').val()
-    $('#new_list')[0].reset()
+    attributes = name: $('#new_list_name').val(), description:  $('#new_list_description').val()
+    @collection.create attributes,
+      wait: true
+      success: -> $('#new_list')[0].reset()
+      error: @handleError
+
+  handleError: (list, response) ->
+    if response.status == 422
+      errors = $.parseJSON(response.responseText).errors
+      for attribute, messages of errors
+        alert "#{attribute} #{messages}" for message in messages
+
+  removeOneList: (e) ->
+      listId = if e.id? e.id else e.cid
+      @$el.find('#list-' + listId).remove()
