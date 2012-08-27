@@ -1,6 +1,11 @@
 class ListBackbone.Routers.Lists extends Backbone.Router
   routes:
     '' : 'index'
+    'lists/:id': 'show'
 
   index: ->
-    alert 'hello to home page'
+    view = new ListBackbone.Views.ListsIndex()
+    $('#container').html(view.render().el)
+
+  show:(id) ->
+    alert "hello #{id}"
