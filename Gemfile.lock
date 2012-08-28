@@ -53,6 +53,7 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    fabrication (2.2.1)
     ffi (1.0.11)
     guard (1.2.3)
       listen (>= 0.4.2)
@@ -152,6 +153,7 @@ DEPENDENCIES
   backbone-support
   coffee-rails (~> 3.2.1)
   eco
+  fabrication
   guard-rspec
   haml
   haml_assets
