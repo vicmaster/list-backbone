@@ -9,6 +9,10 @@ How to use this application
         $ git add .
         $ git commit -m "Initialize git repository in local"
 
+###You can see the demo in action
+
+        http://backbone-list.herokuapp.com/
+
 
 ###The Next guide Will show you How this application was created
 
