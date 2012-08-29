@@ -1,5 +1,13 @@
 #list-backbone App
+How to use this application
 
+        $ git git@github.com:vicmaster/list-backbone.git
+        $ cd list-backbone
+        $ bundle install
+        $ rake db:setup
+        $ rake db:seed
+        $ git add .
+        $ git commit -m "Initialize git repository in local"
 
 
 ###The Next guide Will show you How this application was created
