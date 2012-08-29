@@ -11,7 +11,7 @@ How to use this application
 
 ###You can see the demo in action
 
-        http://backbone-list.herokuapp.com/
+       * http://backbone-list.herokuapp.com/
 
 
 ###The Next guide Will show you How this application was created
