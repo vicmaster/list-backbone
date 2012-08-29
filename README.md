@@ -26,24 +26,28 @@ Open your terminal console in my case using ubuntu ctrl + Alt + t
         $ cd backbone-app
 
 After that, we created a controller called main controller using rails generate
-$ rails g controller main index --skip-javascripts
+        $ rails g controller main index --skip-javascripts
 
 To initialize our app using git to controller versions
+
         $ git init
         $ git add .
         $ git commit -m “initialize our new application”
 
 we edit our fil app/view/mains/index.html.erb with the next code:
+
         <div id = “container”></div>
 
 and remove the file public/index.html.erb
 
 after that we config the file config/routes.rb and change the code:
-get ‘main/index’
-to
-root to: ‘main#index’
+
+        get ‘main/index’
+        to
+        root to: ‘main#index’
 
 now whe can observe our app running with the next code:
+
         $ bundle install #install our gems
         $ rails server or only rails s
 
@@ -52,27 +56,31 @@ Now we going to use the gem https://github.com/meleyal/backbone-on-rails
 to use that we must stop our server in console using ctrl + c
 
 So to use the gem we need to add the gem at the file Gemfile
+
         gem 'backbone-on-rails'
 
 After add the gem we need run the bundle install from our console
+
         $ bundle install
 
 Now lets go to create the structure of backbone using the console too
+
         $ rails g backbone:install
 
 Later we can find the file and skeleton in the dir app/assets/javascript
 
 now we can run our server
+
         $ rails s
 
 After see in our browser in the url http://localhost:3000 we can see and alert dialog that is made in backbone and we can find in the file app/assets/javascripts/backbone_app.js.coffee or with the name of our application if we want to remove the alert is located in the initialize function only remove if you want.
 
 Now we going to create a new scaffold table using backbone and the code is the next
+
         $ rails g backbone:scaffold entries
 
-Now we going to see our files created in app/assets/javascript and we open and edit the next file app/assets/javascripts/routers/entries.js.coffee
+Now we going to see our files created in app/assets/javascript and we open and edit the next file app/assets/javascripts/routers/entries.js.coffee  And we add the next code:
 
-And we add the next code:
         class BackboneApp.Routers.Entries extends Backbone.Router
           routes:
             '' : 'index'
@@ -83,6 +91,7 @@ And we add the next code:
             alert 'hello to home page'
 
 and add the next code to the file the file app/assets/javascripts/backbone_app.js.coffee
+
         window.BackboneApp =
           Models: {}
           Collections: {}
@@ -97,6 +106,7 @@ and add the next code to the file the file app/assets/javascripts/backbone_app.j
 
 
 Later in lets go to edit the views in javascripts/views/entries/index.js.coffee adding the next code
+
         class BackboneApp.Views.EntriesIndex extends Backbone.View
 
           template: JST['entries/index']
