@@ -7,8 +7,7 @@ source 'https://rubygems.org'
 gem 'haml'
 gem 'jquery-rails'
 gem 'rails', '3.2.6'
-gem 'sqlite3'
-
+gem 'pg'
 
   # Gems used only for assets and not required
 # in production environments by default.
