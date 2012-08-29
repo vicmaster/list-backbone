@@ -1,4 +1,2 @@
-list-backbone
+###list-backbone App
 =============
-
-Backbone on Rails Implementation
