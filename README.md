@@ -396,3 +396,7 @@ and we need to edit the file app/assets/javascripts/views/entries/index.js.coffe
 
 
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/vicmaster/list-backbone/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
